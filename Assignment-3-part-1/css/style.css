@@ -1,0 +1,15 @@
+.container{
+	margin: 10%;
+}
+.panel-footer{
+	text-align: right;
+}
+.event{
+	text-align:left;
+}
+#clear-logs{
+	text-align:right;
+} 
+#event-logs{
+	text-align:left;
+} 
