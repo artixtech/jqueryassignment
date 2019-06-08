@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Basic JQuery Events</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-heading text-center">
+						<h2>Events</h2>
+					</div>
+					<div class="panel-body text-center" >
+						<a href="#" > Link with jquery events</a>
+					</div>
+
+					<div class="panel-footer">
+						<div class="event">
+							TEXT
+							<p id="clear-logs">Clear</p>
+							<hr/>
+						</div>
+						<div id="event-logs">
+						</div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+		  
+		  $("#clear-logs").click(function(){
+		  	$("#event-logs").text ("Cleared All Text");
+		  });
+		  $("a").hover(function(){
+		    //alert("hover event");
+		    $("#event-logs").append ("<br/>Hover Event...");
+		  }); 
+		  $("a").click(function(e) {
+			    e.preventDefault();
+			    $("#event-logs").append ("<br/>Click Event..."); 
+			    return false;  
+			}); 
+		});
+		$("a").on({
+		  mouseenter: function(){
+		    $("#event-logs").append ("<br/>MouseEnter Event...");
+		  }, 
+		  mouseleave: function(){
+		    $("#event-logs").append ("<br/>Mouseleave Event...");
+		  }
+		   
+		});
+	</script>
+</body>
+</html>
